@@ -308,7 +308,11 @@ public class MonomerStoreConfiguration {
    * Refreshes the configuration using the local properties file.
    */
   public void refresh() {
-    File configFile = new File(CONFIG_FILE_PATH);
+    String configFilePath = System.getenv("HELM_CONFIG_FILE_PATH");
+    if (configFilePath == null || configFilePath.isEmpty()) {
+        configFilePath = CONFIG_FILE_PATH;
+    }
+    File configFile = new File(configFilePath);
 
     if (!configFile.exists()) {
       BufferedWriter writer = null;
