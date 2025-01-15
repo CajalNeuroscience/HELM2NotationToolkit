@@ -350,7 +350,7 @@ public class MonomerStoreConfiguration {
     try
 
     {
-      PropertiesConfiguration conf = new PropertiesConfiguration(CONFIG_FILE_PATH);
+      PropertiesConfiguration conf = new PropertiesConfiguration(configFilePath);
       isUseWebservice = conf.getBoolean(USE_WEBSERVICE);
       isUpdateAutomatic = conf.getBoolean(UPDATE_AUTOMATIC);
       webserviceMonomersURL = conf.getString(WEBSERVICE_MONOMERS_URL);
